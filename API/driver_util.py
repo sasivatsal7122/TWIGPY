@@ -8,7 +8,7 @@ def start_and_load_cookies():
     options = Options()
     options.headless = True
     options.add_argument("--incognito")
-    driver = webdriver.Chrome(options=options,service=Service(ChromeDriverManager().install()))
+    driver = webdriver.Chrome(options=options,executable_path="./chromedriver/chromedriver.exe")
     driver.get("https://www.twitter.com/")
     cookies = pickle.load(open("twittercookies.pkl", "rb"))
     for cookie in cookies:
